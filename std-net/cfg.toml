@@ -1,0 +1,4 @@
+[std-net]
+wifi_ssid = ""
+wifi_psk = ""
+http_server = ""

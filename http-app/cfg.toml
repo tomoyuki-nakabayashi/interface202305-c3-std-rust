@@ -1,0 +1,4 @@
+[http-app]
+wifi_ssid = ""
+wifi_psk = ""
+http_server = "http://localhost/sensor"

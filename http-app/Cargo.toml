@@ -1,0 +1,43 @@
+[package]
+name = "http-app"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = "s"
+
+[profile.dev]
+debug = true # Symbols are nice and they don't increase the size on Flash
+opt-level = "z"
+
+[features]
+default = ["native"]
+native = ["esp-idf-sys/native"]
+
+[dependencies]
+embedded-hal = "=1.0.0-alpha.9"
+embedded-hal-0-2 = { package = "embedded-hal", version = "0.2.7", features = ["unproven"] }
+esp-idf-sys = { version = "=0.32", features = ["binstart"] }
+esp-idf-svc = { version="=0.45", features = ["experimental", "alloc"] }
+embedded-svc = "0.24"
+esp-idf-hal = "0.40.1"
+log = "0.4"
+anyhow = "1"
+toml-cfg = "0.1"
+bme280 = "0.4.4"
+ssd1331 = "0.3"
+embedded-graphics = "0.7"
+attohttpc = { version="0.24", default-features = false, features = ["json"] }
+serde_json = "1.0"
+serde = "1.0"
+mutex-trait = "0.2"
+
+[build-dependencies]
+embuild = "0.28"
+anyhow = "1"
+
+[patch.crates-io]
+bme280 = { git = 'https://github.com/tomoyuki-nakabayashi/bme280-rs', branch = 'embedded-hal-1.0.0-alpha.9' }
+
+[package.metadata.espflash]
+partition_table = "partitions.csv"

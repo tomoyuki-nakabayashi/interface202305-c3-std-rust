@@ -1,0 +1,26 @@
+[package]
+name = "c3-rust-template"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = "s"
+
+[profile.dev]
+debug = true # デバッグシンボルがあってもFlashに書き込むサイズは変わらないのでデバッグ用につけておく
+opt-level = "z"
+
+[features]
+default = ["native"]
+native = ["esp-idf-sys/native"]
+
+[dependencies]
+esp-idf-sys = { version = "=0.32", features = ["binstart"] }
+esp-idf-svc = { version="=0.45", features = ["experimental", "alloc"] }
+esp-idf-hal = "0.40.1"
+log = "0.4"
+anyhow = "1"
+
+[build-dependencies]
+embuild = "0.28"
+anyhow = "1"

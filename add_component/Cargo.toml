@@ -1,0 +1,23 @@
+[package]
+name = "hello_c3"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = "s"
+
+[profile.dev]
+debug = true # デバッグシンボルがあってもFlashに書き込むサイズは変わらないのでデバッグ用につけておく
+opt-level = "z"
+
+[dependencies]
+esp-idf-sys = { version = "=0.31.11", features = ["binstart"] }
+
+[build-dependencies]
+embuild = "0.28"
+anyhow = "1"
+
+[[package.metadata.esp-idf-sys.extra_components]]
+component_dirs = ["my_component"]
+bindings_header = "my_component/include/my_component.h"
+bindings_module = "my_component"

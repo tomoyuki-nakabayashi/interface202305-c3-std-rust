@@ -1,0 +1,8 @@
+[http-client]
+wifi_ssid = ""
+wifi_psk = ""
+http_server = ""
+
+[http-server]
+wifi_ssid = ""
+wifi_psk = ""

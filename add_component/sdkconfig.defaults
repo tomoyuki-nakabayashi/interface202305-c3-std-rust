@@ -1,0 +1,2 @@
+# Rustではmainタスクのスタックが多めに必要
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=7000

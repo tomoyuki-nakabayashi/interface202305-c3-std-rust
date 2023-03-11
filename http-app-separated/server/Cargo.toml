@@ -1,0 +1,30 @@
+[package]
+name = "http-server"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["native"]
+native = ["esp-idf-sys/native"]
+
+[dependencies]
+common = { path = "../common" }
+embedded-hal-0-2 = { package = "embedded-hal", version = "0.2.7", features = ["unproven"] }
+esp-idf-sys = { version = "=0.32", features = ["binstart"] }
+esp-idf-svc = { version="=0.45", features = ["experimental", "alloc"] }
+embedded-svc = "0.24"
+esp-idf-hal = "0.40.1"
+log = "0.4"
+anyhow = "1"
+toml-cfg = "0.1"
+ssd1331 = "0.3"
+embedded-graphics = "0.7"
+serde_json = "1.0"
+serde = "1.0"
+
+[build-dependencies]
+embuild = "0.28"
+anyhow = "1"
+
+[package.metadata.espflash]
+partition_table = "partitions.csv"
