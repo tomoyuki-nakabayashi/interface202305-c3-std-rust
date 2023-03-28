@@ -3,6 +3,8 @@
 [インターフェース2023年5月号](https://interface.cqpub.co.jp/magazine/202305/) マイコンで動くフル機能Rustのソースコードリポジトリです。
 質問や困ったことがあれば [issues](https://github.com/tomoyuki-nakabayashi/interface202305-c3-std-rust/issues) にお願いします。
 
+環境構築に関して[正誤表 & FAQ](./correct.md) があります。お手数ですが、こちらもご確認お願いいたします。
+
 ![http-app](./.images/http-app.jpg)
 
 [M5Stamp C3U Mate](https://www.switch-science.com/products/7894) で **std** を使えった組込み Rust を体験しましょう。
